@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace LeSheApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -14,8 +15,21 @@ namespace LeSheApp.Views
     {
         public LoginPage()
         {
+            var vm = new LoginViewModel();
+            this.BindingContext = vm;
+            vm.DisplayFail += () => DisplayAlert("Error", "Invalid Login, try again", "OK");
+            vm.DisplaySuccess += () => DisplayAlert("Success", "Success", "OK");
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
+
+            Email.Completed += (object sender, EventArgs e) =>
+            {
+                Password.Focus();
+            };
+
+            Password.Completed += (object sender, EventArgs e) =>
+            {
+                vm.SubmitCommand.Execute(null);
+            };
         }
     }
 }
