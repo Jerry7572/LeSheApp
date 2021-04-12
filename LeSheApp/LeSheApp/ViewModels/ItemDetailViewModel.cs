@@ -6,27 +6,27 @@ using Xamarin.Forms;
 
 namespace LeSheApp.ViewModels
 {
-    [QueryProperty(nameof(ItemId), nameof(ItemId))]
+    [QueryProperty(nameof(GarbageTruckSpotId), nameof(GarbageTruckSpotId))]
     public class ItemDetailViewModel : BaseViewModel
     {
         private string itemId;
-        private string text;
-        private string description;
+        private string arrivalTime;
+        private string address;
         public string Id { get; set; }
 
-        public string Text
+        public string ArrivalTime
         {
-            get => text;
-            set => SetProperty(ref text, value);
+            get => arrivalTime;
+            set => SetProperty(ref arrivalTime, value);
         }
 
-        public string Description
+        public string Address
         {
-            get => description;
-            set => SetProperty(ref description, value);
+            get => address;
+            set => SetProperty(ref address, value);
         }
 
-        public string ItemId
+        public string GarbageTruckSpotId
         {
             get
             {
@@ -45,8 +45,8 @@ namespace LeSheApp.ViewModels
             {
                 var item = await DataStore.GetItemAsync(itemId);
                 Id = item.Id;
-                Text = item.Text;
-                Description = item.Description;
+                ArrivalTime = item.Text;
+                Address = item.Description;
             }
             catch (Exception)
             {
