@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace LeSheApp.ViewModels
 {
-    public class LoginViewModel : INotifyPropertyChanged
+    public class LoginViewModel : ContentPage, INotifyPropertyChanged
     {
         public Command LoginCommand { get; }
 
@@ -53,7 +53,7 @@ namespace LeSheApp.ViewModels
             }
         }
         public ICommand SubmitCommand { protected set; get; }
-        public void OnSubmit()
+        private async void OnSubmit()
         {
             WebRequest request = WebRequest.Create($"http://192.168.36.103/Xamarin/Login?email={Email}&password={Password}");
             // request.ServerCertificateCustomValidationCallback = delegate { return true; }
@@ -71,6 +71,7 @@ namespace LeSheApp.ViewModels
             if (!back.ToString().Contains("Fail"))
             {
                 cMember member = JsonConvert.DeserializeObject<cMember>(json);
+                Application.Current.Properties[new cDic().memberId] = member.MemberId;
                 DisplaySuccess();
 
             }

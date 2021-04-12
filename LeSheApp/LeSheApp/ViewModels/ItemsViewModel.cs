@@ -1,8 +1,12 @@
 ﻿using LeSheApp.Models;
 using LeSheApp.Views;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
+using System.Net;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -13,6 +17,7 @@ namespace LeSheApp.ViewModels
         private Item _selectedItem;
 
         public ObservableCollection<Item> Items { get; }
+        public ObservableCollection<cSpot> Spots { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
         public Command<Item> ItemTapped { get; }
@@ -35,7 +40,7 @@ namespace LeSheApp.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = getAll();
                 foreach (var item in items)
                 {
                     Items.Add(item);
@@ -80,5 +85,24 @@ namespace LeSheApp.ViewModels
             // This will push the ItemDetailPage onto the navigation stack
             await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
         }
+
+        public List<Item> getAll()
+        {
+            WebRequest request = WebRequest.Create("http://192.168.36.103/Xamarin/getSpot");
+            // request.ServerCertificateCustomValidationCallback = delegate { return true; }
+            request.Credentials = CredentialCache.DefaultCredentials;
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Console.WriteLine(response.StatusDescription);
+            Stream dataStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(dataStream);
+            string json = reader.ReadToEnd();
+            reader.Close();
+            dataStream.Close();
+            response.Close();
+
+            List<Item> spotFromCloud = JsonConvert.DeserializeObject<List<Item>>(json);
+            return spotFromCloud;//getSQLite().Table<CCustomer>().ToListAsync().Result;
+        }
+
     }
 }
