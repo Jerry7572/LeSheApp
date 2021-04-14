@@ -10,11 +10,11 @@
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Entry x:Name="Email" Text="{Binding Email}" Placeholder="Email"   
+            <Entry x:Name="Email" Text="YuChen789@gmail.com" Placeholder="Email"   
                            PlaceholderColor="White" HeightRequest="40"   
                            Keyboard="Email"  
                            />
-            <Entry x:Name="Password" Text="{Binding Password}" Placeholder="Password"   
+            <Entry x:Name="Password" Text="Password123" Placeholder="Password"   
                            PlaceholderColor="White" HeightRequest="40"   
                            IsPassword="True"  
                            />

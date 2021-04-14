@@ -4,9 +4,39 @@
              x:Class="LeSheApp.Views.SearchPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal" >
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Picker Title="請選擇" SelectedIndexChanged="selectedCity" x:Name="City">
+                        <Picker.Items>
+                            <x:String>台北市</x:String>
+                            <x:String>新北市</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Picker Title="請選擇" x:Name="Dis">
+                    </Picker>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Picker Title="請選擇" x:Name="length">
+                        <Picker.Items>
+                            <x:String>100公尺</x:String>
+                            <x:String>200公尺</x:String>
+                            <x:String>300公尺</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+                <Entry Placeholder="地址" x:Name="Address"></Entry>
+                <Button x:Name="send" Text="送出" Clicked="sendAddress"></Button>
+            </StackLayout>
+            <StackLayout x:Name="listAddress">
+                <Label x:Name="labAddress0" FontSize="Large"></Label>
+                <Label x:Name="labArrive0" FontSize="Medium"></Label>
+            </StackLayout>
+
+            <Label x:Name="Error" TextColor="Red"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

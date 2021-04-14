@@ -1524,11 +1524,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Note\\code\\LeSheApp\\LeSheApp\\LeSheApp.iOS\\LeSheApp.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\LeSheApp\\LeSheApp\\LeSheApp.iOS\\LeSheApp.iOS.csproj",
       "projectName": "LeSheApp.iOS",
-      "projectPath": "C:\\Note\\code\\LeSheApp\\LeSheApp\\LeSheApp.iOS\\LeSheApp.iOS.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\LeSheApp\\LeSheApp\\LeSheApp.iOS\\LeSheApp.iOS.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Note\\code\\LeSheApp\\LeSheApp\\LeSheApp.iOS\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\LeSheApp\\LeSheApp\\LeSheApp.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1551,8 +1551,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Note\\code\\LeSheApp\\LeSheApp\\LeSheApp\\LeSheApp.csproj": {
-              "projectPath": "C:\\Note\\code\\LeSheApp\\LeSheApp\\LeSheApp\\LeSheApp.csproj"
+            "C:\\Users\\User\\Documents\\GitHub\\LeSheApp\\LeSheApp\\LeSheApp\\LeSheApp.csproj": {
+              "projectPath": "C:\\Users\\User\\Documents\\GitHub\\LeSheApp\\LeSheApp\\LeSheApp\\LeSheApp.csproj"
             }
           }
         }

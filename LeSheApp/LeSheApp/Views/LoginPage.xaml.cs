@@ -37,11 +37,11 @@ namespace LeSheApp.Views
         }
         public Action DisplayFail;
         public Action DisplaySuccess;
-        private async void btnDetail_click(object sender, EventArgs e)
+        private void btnDetail_click(object sender, EventArgs e)
         {
-           string email= Email.Text;
+            string email= Email.Text;
             string password = Password.Text;
-            WebRequest request = WebRequest.Create($"http://192.168.36.187:81/Xamarin/Login?email={email}&password={password}");
+            WebRequest request = WebRequest.Create($"http://192.168.36.103:80/Xamarin/Login?email={email}&password={password}");
             request.Credentials = CredentialCache.DefaultCredentials;
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Console.WriteLine(response.StatusDescription);
@@ -57,7 +57,8 @@ namespace LeSheApp.Views
             {
                 cMember member = JsonConvert.DeserializeObject<cMember>(json);
                 Application.Current.Properties[new cDic().memberId] = member.MemberId;
-                await Navigation.PushAsync(new ItemsPage());
+                Navigation.PushAsync(new SearchPage());
+
             }
             else
                 Error.Text = "查無此帳";
