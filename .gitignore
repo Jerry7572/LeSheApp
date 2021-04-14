@@ -1,7 +1,8 @@
 /LeSheApp/LeSheApp.Android/bin/Debug/
 /LeSheApp/LeSheApp.Android/obj/Debug/
-
-\LeSheApp\LeSheApp.Android/bin\Debug\
-\LeSheApp\LeSheApp.Android/obj\Debug\
-
+/LeSheApp/LeSheApp.Android/obj/.cache/
+/LeSheApp/LeSheApp/obj/Debug/
+/LeSheApp/LeSheApp/bin/Debug/
+/LeSheApp/LeSheApp.iOS/
+.vs/LeSheApp/v16/.suo
 $ git clean -fX
