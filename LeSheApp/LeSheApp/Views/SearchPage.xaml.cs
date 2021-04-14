@@ -93,8 +93,19 @@ namespace LeSheApp.Views
             if (!back.ToString().Contains("Fail"))
             {
                 List<cSpot> list = JsonConvert.DeserializeObject<List<cSpot>>(json);
-                for(int i = 0; i < list.Count; i++)
+                foreach (var item in list)
                 {
+                    Label la = new Label();
+                    Label la2 = new Label();
+                    //Hyperlink hy = new Hyperlink();
+                    //hy.
+                    //hy.NavigateUri = "地點:" + item.Address;
+                    la.FontSize = 20;
+                    la2.FontSize = 15;
+                    la.Text = "地點:" + item.Address;
+                    la2.Text += "抵達時間:" + item.ArrivalTime;
+                    listAddress.Children.Add(la);
+                    listAddress.Children.Add(la2);
                 }
 
             }
