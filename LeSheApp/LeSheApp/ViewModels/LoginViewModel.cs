@@ -1,6 +1,7 @@
 ﻿using LeSheApp.Models;
 using LeSheApp.Views;
 using Newtonsoft.Json;
+using prjCustomerSysMobile;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,7 @@ namespace LeSheApp.ViewModels
         public LoginViewModel()
         {
             //LoginCommand = new Command(OnLoginClicked);
-            SubmitCommand = new Command(OnSubmit);
+            //    SubmitCommand = new Command(OnSubmit);
         }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
@@ -53,30 +54,35 @@ namespace LeSheApp.ViewModels
             }
         }
         public ICommand SubmitCommand { protected set; get; }
-        private async void OnSubmit()
+        private async void OnSubmit(object sender, EventArgs e)
         {
-            WebRequest request = WebRequest.Create($"http://192.168.36.103/Xamarin/Login?email={Email}&password={Password}");
-            // request.ServerCertificateCustomValidationCallback = delegate { return true; }
-            request.Credentials = CredentialCache.DefaultCredentials;
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            Console.WriteLine(response.StatusDescription);
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-            string json = reader.ReadToEnd();
-            reader.Close();
-            dataStream.Close();
-            response.Close();
+            //WebRequest request = WebRequest.Create($"http://192.168.36.187:81/Xamarin/Login?email={Email}&password={Password}");
+            //request.Credentials = CredentialCache.DefaultCredentials;
+            //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            //Console.WriteLine(response.StatusDescription);
+            //Stream dataStream = response.GetResponseStream();
+            //StreamReader reader = new StreamReader(dataStream);
+            //string json = reader.ReadToEnd();
+            //reader.Close();
+            //dataStream.Close();
+            //response.Close();
 
-            var back = JsonConvert.DeserializeObject(json);
-            if (!back.ToString().Contains("Fail"))
-            {
-                cMember member = JsonConvert.DeserializeObject<cMember>(json);
-                Application.Current.Properties[new cDic().memberId] = member.MemberId;
-                DisplaySuccess();
-
-            }
-            else
-                DisplayFail();
+            //var back = JsonConvert.DeserializeObject(json);
+            //if (!back.ToString().Contains("Fail"))
+            //{
+            //    cMember member = JsonConvert.DeserializeObject<cMember>(json);
+            //    Application.Current.Properties[new cDic().memberId] = member.MemberId;
+            //    //DisplaySuccess();
+            //   // await Navigation.PopAsync();
+            //    await Navigation.PushAsync(new ItemsPage());
+            //}
+            //else
+            //    DisplayFail();
+            await Navigation.PushAsync(new ItemsPage());
         }
+        //private async void btnDetail_click(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new ItemsPage());
+        //}
     }
 }

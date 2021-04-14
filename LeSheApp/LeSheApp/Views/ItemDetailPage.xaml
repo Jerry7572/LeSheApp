@@ -5,7 +5,7 @@
              Title="{Binding Title}">
 
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
+        <Label x:Name="labName" Text="Text:" FontSize="Medium" />
         <Label Text="{Binding Address}" FontSize="Small"/>
         <Label Text="Description:" FontSize="Medium" />
         <Label Text="{Binding ArrivalTime}" FontSize="Small"/>
