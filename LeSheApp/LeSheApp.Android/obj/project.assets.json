@@ -2420,11 +2420,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\LeSheApp\\LeSheApp\\LeSheApp.Android\\LeSheApp.Android.csproj",
+      "projectUniqueName": "C:\\Note\\code\\LeSheApp\\LeSheApp\\LeSheApp.Android\\LeSheApp.Android.csproj",
       "projectName": "LeSheApp.Android",
-      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\LeSheApp\\LeSheApp\\LeSheApp.Android\\LeSheApp.Android.csproj",
+      "projectPath": "C:\\Note\\code\\LeSheApp\\LeSheApp\\LeSheApp.Android\\LeSheApp.Android.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\LeSheApp\\LeSheApp\\LeSheApp.Android\\obj\\",
+      "outputPath": "C:\\Note\\code\\LeSheApp\\LeSheApp\\LeSheApp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2447,8 +2447,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "C:\\Users\\User\\Documents\\GitHub\\LeSheApp\\LeSheApp\\LeSheApp\\LeSheApp.csproj": {
-              "projectPath": "C:\\Users\\User\\Documents\\GitHub\\LeSheApp\\LeSheApp\\LeSheApp\\LeSheApp.csproj"
+            "C:\\Note\\code\\LeSheApp\\LeSheApp\\LeSheApp\\LeSheApp.csproj": {
+              "projectPath": "C:\\Note\\code\\LeSheApp\\LeSheApp\\LeSheApp\\LeSheApp.csproj"
             }
           }
         }

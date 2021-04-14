@@ -10,6 +10,7 @@ namespace LeSheApp.Views
         {
             InitializeComponent();
             BindingContext = new ItemDetailViewModel();
+
         }
     }
 }

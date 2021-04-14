@@ -18,7 +18,8 @@
                            PlaceholderColor="White" HeightRequest="40"   
                            IsPassword="True"  
                            />
-            <Button VerticalOptions="Center" Text="登入" Command="{Binding SubmitCommand}"/>
+            <Button VerticalOptions="Center" Text="登入" Clicked="btnDetail_click"/>
+            <Label x:Name="Error" Text="" VerticalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
