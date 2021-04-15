@@ -100,7 +100,7 @@ namespace LeSheApp.Views
             string totalAddress = City.SelectedItem.ToString() + Dis.SelectedItem.ToString() + Address.Text;
             int maxLength = Convert.ToInt32(length.SelectedItem.ToString().Substring(0, 3));
             cDic cDic = new cDic();
-            var json = cDic.cWeb(totalAddress, maxLength);
+            var json = cDic.cWeb(totalAddress, maxLength,0);
             var back = JsonConvert.DeserializeObject(json);
             if (!back.ToString().Contains("Fail"))
             {

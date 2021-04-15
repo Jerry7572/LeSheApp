@@ -53,11 +53,11 @@ namespace LeSheApp.Views
                 maxLength = Convert.ToInt32(length.SelectedItem.ToString().Substring(0, 3));
             }
             cDic cDic = new cDic();
-            var json = cDic.cWeb(totalAddress, maxLength);
+            var json = cDic.cWeb(totalAddress, maxLength,1);
             var back = JsonConvert.DeserializeObject(json);
             if (!back.ToString().Contains("Fail"))
             {
-                List<cSpot> list = JsonConvert.DeserializeObject<List<cSpot>>(json);
+                List<cOrder> list = JsonConvert.DeserializeObject<List<cOrder>>(json);
                 listBuy.Children.Clear();
                 Error.Text = "";
                 int count = 0;
@@ -84,7 +84,7 @@ namespace LeSheApp.Views
                     la2.FontSize = 15;
                     laCount.Text = "第" + count + "筆";
                     la.Text = "地點:" + item.Address;
-                    la2.Text += "抵達時間: " + item.ArrivalTime.Hours + ":" + item.ArrivalTime.Minutes;
+                    la2.Text += "終止時間: " + item.EndTime + "\n商品描述:" + item.OrderDescription + "\n價錢:" + item.UnitPrice;
                     listBuy.Children.Add(laCount);
                     listBuy.Children.Add(la);
                     listBuy.Children.Add(la2);

@@ -17,15 +17,16 @@ namespace LeSheApp.Models
             string json = getJs(con);
             return json;
         }
-        public string cWeb(string address, int length)
+        public string cWeb(string address, int length, int type)
         {
-            string con = $"getLength?address={ address }&length={ length}";
+            string con = $"getLength?address={ address }&length={ length}&type={type}";
             string json = getJs(con);
             return json;
         }
         public string getJs(string con)
         {
-            WebRequest request = WebRequest.Create($"http://192.168.36.103:80/Xamarin/{con}");
+          //  WebRequest request = WebRequest.Create($"http://192.168.36.103:80/Xamarin/{con}");
+            WebRequest request = WebRequest.Create($"http://192.168.36.187:81/Xamarin/{con}");
             request.Credentials = CredentialCache.DefaultCredentials;
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Console.WriteLine(response.StatusDescription);
