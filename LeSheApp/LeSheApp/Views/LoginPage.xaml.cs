@@ -57,7 +57,7 @@ namespace LeSheApp.Views
             {
                 cMember member = JsonConvert.DeserializeObject<cMember>(json);
                 Application.Current.Properties[new cDic().memberId] = member.MemberId;
-                Navigation.PushAsync(new SearchPage());
+                Navigation.PushAsync(new SearchPage(member));
 
             }
             else

@@ -16,9 +16,22 @@ namespace LeSheApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SearchPage : ContentPage
     {
-        public SearchPage()
+        public SearchPage(cMember member)
         {
             InitializeComponent();
+            if (member.DistrictId < 13)
+            {
+                City.SelectedIndex = 0;
+                Dis.SelectedIndex = member.DistrictId;
+            }
+            else
+            {
+                City.SelectedIndex = 1;
+                Dis.SelectedIndex = member.DistrictId - 13;
+            }
+            Address.Text = member.Address;
+            length.SelectedIndex = 0;
+
         }
 
         private void selectedCity(object sender, EventArgs e)
@@ -76,9 +89,14 @@ namespace LeSheApp.Views
 
         private void sendAddress(object sender, EventArgs e)
         {
+            if (City.SelectedIndex < 0 || Dis.SelectedIndex < 0 || length.SelectedIndex < 0)
+            {
+                Error.Text = "請選擇";
+                return;
+            }
             string totalAddress = City.SelectedItem.ToString() + Dis.SelectedItem.ToString() + Address.Text;
             string maxLength = length.SelectedItem.ToString().Substring(0,3);
-            WebRequest request = WebRequest.Create($"http://192.168.36.103:80/Xamarin/GetLength?address={totalAddress}&length={maxLength}");
+            WebRequest request = WebRequest.Create($"http://192.168.36.103:80/Xamarin/getLength?address={totalAddress}&length={maxLength}");
             request.Credentials = CredentialCache.DefaultCredentials;
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Console.WriteLine(response.StatusDescription);
@@ -93,21 +111,29 @@ namespace LeSheApp.Views
             if (!back.ToString().Contains("Fail"))
             {
                 List<cSpot> list = JsonConvert.DeserializeObject<List<cSpot>>(json);
+                listAddress.Children.Clear();
+                Error.Text = "";
+                int count = 0;
                 foreach (var item in list)
                 {
+                    count++;
+                    Label laCount = new Label();
                     Label la = new Label();
                     Label la2 = new Label();
                     //Hyperlink hy = new Hyperlink();
                     //hy.
                     //hy.NavigateUri = "地點:" + item.Address;
+                    laCount.FontSize = 18;
+                    laCount.TextColor = Color.BlueViolet;
                     la.FontSize = 20;
                     la2.FontSize = 15;
+                    laCount.Text = "第" + count + "筆";
                     la.Text = "地點:" + item.Address;
-                    la2.Text += "抵達時間:" + item.ArrivalTime;
+                    la2.Text += "抵達時間: " + item.ArrivalTime.Hours + ":" + item.ArrivalTime.Minutes;
+                    listAddress.Children.Add(laCount);
                     listAddress.Children.Add(la);
                     listAddress.Children.Add(la2);
                 }
-
             }
             else
                 Error.Text = "查無結果";

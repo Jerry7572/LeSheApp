@@ -878,11 +878,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Note\\code\\LeSheApp\\LeSheApp\\LeSheApp\\LeSheApp.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\LeSheApp\\LeSheApp\\LeSheApp\\LeSheApp.csproj",
       "projectName": "LeSheApp",
-      "projectPath": "C:\\Note\\code\\LeSheApp\\LeSheApp\\LeSheApp\\LeSheApp.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\LeSheApp\\LeSheApp\\LeSheApp\\LeSheApp.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Note\\code\\LeSheApp\\LeSheApp\\LeSheApp\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\LeSheApp\\LeSheApp\\LeSheApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
