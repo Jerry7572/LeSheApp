@@ -47,7 +47,7 @@ namespace LeSheApp.Views
             {
                 cMember member = JsonConvert.DeserializeObject<cMember>(json);
                 cDic.member = member;
-                Navigation.PushAsync(new SearchPage());
+                Navigation.PushAsync(new MemberPage());
             }
             else
                 Error.Text = "查無此帳";

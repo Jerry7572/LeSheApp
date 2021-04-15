@@ -5,11 +5,44 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="姓名 :" TextColor="Blue" FontSize="Medium"
+                <Label Text="姓名 :" TextColor="Red" FontSize="Large" 
                 ></Label>
-                <Label Text="姓名2 :" TextColor="Blue" FontSize="Large"
+                <Label x:Name="labName" TextColor="Blue" FontSize="Large"
                 ></Label>
             </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="出生日期 :" TextColor="Red" FontSize="Large" 
+                ></Label>
+                <Label x:Name="labBirth" TextColor="Blue" FontSize="Large"
+                ></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="電子信箱 :" TextColor="Red" FontSize="Large" 
+                ></Label>
+                <Label x:Name="labEmail" TextColor="Blue" FontSize="Large"
+                ></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="地址 :" TextColor="Red" FontSize="Large" 
+                ></Label>
+                <Label x:Name="labAddress" TextColor="Blue" FontSize="Large"
+                ></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="貢獻值 :" TextColor="Red" FontSize="Large" 
+                ></Label>
+                <Label x:Name="labBalance" TextColor="Blue" FontSize="Large"
+                ></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="你想去哪裡? :" TextColor="Red" FontSize="Large" 
+                ></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="查詢垃圾地圖" TextColor="Green" FontSize="Medium" Clicked="toSearch"
+                ></Button>
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
