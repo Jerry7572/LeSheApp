@@ -55,9 +55,9 @@ namespace LeSheApp.Views
             cDic cDic = new cDic();
             var json = cDic.cWeb(totalAddress, maxLength,1);
             var back = JsonConvert.DeserializeObject(json);
-            if (!back.ToString().Contains("Fail"))
+            List<cOrder> list = JsonConvert.DeserializeObject<List<cOrder>>(json);
+            if (list.Count>0)
             {
-                List<cOrder> list = JsonConvert.DeserializeObject<List<cOrder>>(json);
                 listBuy.Children.Clear();
                 Error.Text = "";
                 int count = 0;
