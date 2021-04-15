@@ -34,7 +34,7 @@
                 </StackLayout>
                 <StackLayout>
                     <Entry Placeholder="地址" x:Name="Address"></Entry>
-                    <Button Text="送出" Clicked="sendBuy"></Button>
+                    <Button Text="送出" Clicked="sendBuy" BackgroundColor="#89B130"></Button>
                 </StackLayout>
                 <StackLayout x:Name="listBuy">
                 </StackLayout>
