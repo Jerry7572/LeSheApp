@@ -41,6 +41,9 @@
             <StackLayout Orientation="Horizontal">
                 <Button Text="查詢垃圾地圖" TextColor="Green" FontSize="Medium" Clicked="toSearch"
                 ></Button>
+                <Button Text="查詢附近團購" TextColor="Green" FontSize="Medium" Clicked="toBuy"
+                ></Button>
+
             </StackLayout>
 
         </StackLayout>

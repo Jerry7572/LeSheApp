@@ -30,5 +30,10 @@ namespace LeSheApp.Views
         {
             Navigation.PushAsync(new SearchPage());
         }
+
+        private void toBuy(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new buySearchPage());
+        }
     }
 }
