@@ -16,9 +16,11 @@ namespace LeSheApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SearchPage : ContentPage
     {
-        public SearchPage(cMember member)
+        cMember member;
+        public SearchPage()
         {
             InitializeComponent();
+            member = cDic.member;
             if (member.DistrictId < 13)
             {
                 City.SelectedIndex = 0;
@@ -95,18 +97,9 @@ namespace LeSheApp.Views
                 return;
             }
             string totalAddress = City.SelectedItem.ToString() + Dis.SelectedItem.ToString() + Address.Text;
-            string maxLength = length.SelectedItem.ToString().Substring(0,3);
-            WebRequest request = WebRequest.Create($"http://192.168.36.103:80/Xamarin/getLength?address={totalAddress}&length={maxLength}");
-            request.Credentials = CredentialCache.DefaultCredentials;
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            Console.WriteLine(response.StatusDescription);
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-            string json = reader.ReadToEnd();
-            reader.Close();
-            dataStream.Close();
-            response.Close();
-
+            int maxLength = Convert.ToInt32(length.SelectedItem.ToString().Substring(0, 3));
+            cDic cDic = new cDic();
+            var json = cDic.cWeb(totalAddress, maxLength);
             var back = JsonConvert.DeserializeObject(json);
             if (!back.ToString().Contains("Fail"))
             {

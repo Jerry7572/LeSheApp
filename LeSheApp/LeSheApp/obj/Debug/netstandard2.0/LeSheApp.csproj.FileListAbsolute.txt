@@ -19,7 +19,6 @@ C:\Users\User\Documents\GitHub\LeSheApp\LeSheApp\LeSheApp\obj\Debug\netstandard2
 C:\Users\User\Documents\GitHub\LeSheApp\LeSheApp\LeSheApp\obj\Debug\netstandard2.0\ref\LeSheApp.dll
 C:\Users\User\Documents\GitHub\LeSheApp\LeSheApp\LeSheApp\obj\Debug\netstandard2.0\LeSheApp.pdb
 C:\Users\User\Documents\GitHub\LeSheApp\LeSheApp\LeSheApp\obj\Debug\netstandard2.0\Views\MemberPage.xaml.g.cs
-C:\Users\User\Documents\GitHub\LeSheApp\LeSheApp\LeSheApp\obj\Debug\netstandard2.0\Views\MemberDetailView.xaml.g.cs
 C:\Note\code\LeSheApp\LeSheApp\LeSheApp\bin\Debug\netstandard2.0\LeSheApp.deps.json
 C:\Note\code\LeSheApp\LeSheApp\LeSheApp\bin\Debug\netstandard2.0\LeSheApp.dll
 C:\Note\code\LeSheApp\LeSheApp\LeSheApp\bin\Debug\netstandard2.0\ref\LeSheApp.dll

@@ -14,7 +14,7 @@ namespace LeSheApp.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\MemberPage.xaml")]
-    public partial class MemberPage : global::Xamarin.Forms.TabbedPage {
+    public partial class MemberPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {

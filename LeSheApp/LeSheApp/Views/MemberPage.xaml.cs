@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace LeSheApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MemberPage : TabbedPage
+    public partial class MemberPage : ContentPage
     {
         public MemberPage()
         {

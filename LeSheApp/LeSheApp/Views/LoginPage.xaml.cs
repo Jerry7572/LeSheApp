@@ -41,24 +41,13 @@ namespace LeSheApp.Views
         {
             string email= Email.Text;
             string password = Password.Text;
-            WebRequest request = WebRequest.Create($"http://192.168.36.103:80/Xamarin/Login?email={email}&password={password}");
-            request.Credentials = CredentialCache.DefaultCredentials;
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            Console.WriteLine(response.StatusDescription);
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-            string json = reader.ReadToEnd();
-            reader.Close();
-            dataStream.Close();
-            response.Close();
-
+            var json = new cDic().cWeb(email, password);
             var back = JsonConvert.DeserializeObject(json);
             if (!back.ToString().Contains("Fail"))
             {
                 cMember member = JsonConvert.DeserializeObject<cMember>(json);
-                Application.Current.Properties[new cDic().memberId] = member.MemberId;
-                Navigation.PushAsync(new SearchPage(member));
-
+                cDic.member = member;
+                Navigation.PushAsync(new SearchPage());
             }
             else
                 Error.Text = "查無此帳";
