@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LeSheApp.Views.HomePage">
+             x:Class="LeSheApp.Views.HomePage"
+             Title="樂社團Go!">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout>
-                <Label Text="Welcome to LeSheTuanGo!"
-                     />
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout >
+                <Label Text="樂活社區，全民動起來。" FontSize="Large" TextColor="Black"/>
+
             </StackLayout>
             <StackLayout>
-                <Button Text="登入" Clicked="toLogin">
+                <Button Text="登入" Clicked="toLogin" BackgroundColor="#89B130">
                 </Button>
             </StackLayout>
         </StackLayout>

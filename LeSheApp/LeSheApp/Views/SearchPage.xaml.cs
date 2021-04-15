@@ -20,6 +20,7 @@ namespace LeSheApp.Views
         public SearchPage()
         {
             InitializeComponent();
+            this.BackgroundImageSource = ImageSource.FromFile("back.png");
             member = cDic.member;
             if (member.DistrictId < 13)
             {

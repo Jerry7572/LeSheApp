@@ -16,6 +16,7 @@ namespace LeSheApp.Views
         public HomePage()
         {
             InitializeComponent();
+            this.BackgroundImageSource = ImageSource.FromFile("back.png");
         }
 
         private void toLogin(object sender, EventArgs e)

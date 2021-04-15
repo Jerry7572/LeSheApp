@@ -1,13 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:viewmodels="clr-namespace:LeSheApp.ViewModels" 
-             x:DataType="viewmodels:LoginViewModel"
-             mc:Ignorable="d"
+             Title="登入"
              x:Class="LeSheApp.Views.LoginPage"
-             Shell.NavBarIsVisible="False">
+             >
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
             <Entry x:Name="Email" Text="YuChen789@gmail.com" Placeholder="Email"   
@@ -18,7 +14,7 @@
                            PlaceholderColor="White" HeightRequest="40"   
                            IsPassword="True"  
                            />
-            <Button VerticalOptions="Center" Text="登入" Clicked="btnDetail_click"/>
+            <Button VerticalOptions="Center" BackgroundColor="#89B130" Text="登入" Clicked="btnDetail_click"/>
             <Label x:Name="Error" Text="" VerticalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>

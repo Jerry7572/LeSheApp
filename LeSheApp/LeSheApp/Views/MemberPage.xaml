@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LeSheApp.Views.MemberPage">
+             x:Class="LeSheApp.Views.MemberPage"
+             Title="會員資料">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal">
@@ -39,9 +40,9 @@
                 ></Label>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Button Text="查詢垃圾地圖" TextColor="Green" FontSize="Medium" Clicked="toSearch"
+                <Button Text="查詢垃圾地圖" BackgroundColor="#89B130" FontSize="Medium" Clicked="toSearch"
                 ></Button>
-                <Button Text="查詢附近團購" TextColor="Green" FontSize="Medium" Clicked="toBuy"
+                <Button Text="查詢附近團購" BackgroundColor="#89B130" FontSize="Medium" Clicked="toBuy"
                 ></Button>
 
             </StackLayout>

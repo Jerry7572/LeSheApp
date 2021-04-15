@@ -17,7 +17,7 @@ namespace LeSheApp.Views
         public MemberPage()
         {
             InitializeComponent();
-            
+            this.BackgroundImageSource = ImageSource.FromFile("back.png");
             member = cDic.member;
             labName.Text = member.FirstName + member.LastName;
             labAddress.Text = member.Address;
