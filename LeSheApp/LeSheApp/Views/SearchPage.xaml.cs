@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -113,9 +113,17 @@ namespace LeSheApp.Views
                     Label laCount = new Label();
                     Label la = new Label();
                     Label la2 = new Label();
-                    //Hyperlink hy = new Hyperlink();
-                    //hy.
-                    //hy.NavigateUri = "地點:" + item.Address;
+                    #region hyperlink
+                    Label hyper = new Label();
+                    string link = "http://maps.google.com/?q=" + item.Address;
+                    var tapGestureRecognizer = new TapGestureRecognizer();
+                    tapGestureRecognizer.Tapped += async (s, even) => {
+                        // Depreciated - Device.OpenUri( new Uri((Label)s).Text); 
+                        // await Launcher.OpenAsync(new Uri(((Label)s).Text));
+                        await Launcher.OpenAsync(new Uri(link));
+                    };
+                    la.GestureRecognizers.Add(tapGestureRecognizer);
+                    #endregion
                     laCount.FontSize = 18;
                     laCount.TextColor = Color.BlueViolet;
                     la.FontSize = 20;

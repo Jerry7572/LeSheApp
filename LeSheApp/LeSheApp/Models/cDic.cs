@@ -13,21 +13,19 @@ namespace LeSheApp.Models
         static public cMember member;
         public string cWeb(string email , string password)
         {
-            WebRequest request = WebRequest.Create($"http://192.168.36.103:80/Xamarin/Login?email={email}&password={password}");
-            request.Credentials = CredentialCache.DefaultCredentials;
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            Console.WriteLine(response.StatusDescription);
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-            string json = reader.ReadToEnd();
-            reader.Close();
-            dataStream.Close();
-            response.Close();
+            string con = $"Login?email={ email}&password={ password}";
+            string json = getJs(con);
             return json;
         }
         public string cWeb(string address, int length)
         {
-            WebRequest request = WebRequest.Create($"http://192.168.36.103:80/Xamarin/getLength?address={address}&length={length}");
+            string con = $"getLength?address={ address }&length={ length}";
+            string json = getJs(con);
+            return json;
+        }
+        public string getJs(string con)
+        {
+            WebRequest request = WebRequest.Create($"http://192.168.36.103:80/Xamarin/{con}");
             request.Credentials = CredentialCache.DefaultCredentials;
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Console.WriteLine(response.StatusDescription);
@@ -38,9 +36,6 @@ namespace LeSheApp.Models
             dataStream.Close();
             response.Close();
             return json;
-
-
         }
-
     }
 }
