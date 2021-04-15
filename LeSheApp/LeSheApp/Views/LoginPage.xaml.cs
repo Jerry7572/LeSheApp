@@ -37,7 +37,7 @@ namespace LeSheApp.Views
         }
         public Action DisplayFail;
         public Action DisplaySuccess;
-        private void btnDetail_click(object sender, EventArgs e)
+        private async void btnDetail_click(object sender, EventArgs e)
         {
             string email= Email.Text;
             string password = Password.Text;
@@ -47,7 +47,8 @@ namespace LeSheApp.Views
             {
                 cMember member = JsonConvert.DeserializeObject<cMember>(json);
                 cDic.member = member;
-                Navigation.PushAsync(new MemberPage());
+                Navigation.InsertPageBefore(new MemberPage(), this);
+                await Navigation.PopAsync();
             }
             else
                 Error.Text = "查無此帳";

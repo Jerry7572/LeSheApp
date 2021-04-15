@@ -17,6 +17,7 @@ namespace LeSheApp.Views
         public MemberPage()
         {
             InitializeComponent();
+            
             member = cDic.member;
             labName.Text = member.FirstName + member.LastName;
             labAddress.Text = member.Address;
