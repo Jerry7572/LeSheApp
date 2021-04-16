@@ -20,7 +20,6 @@ namespace LeSheApp.Views
         public SearchPage()
         {
             InitializeComponent();
-            this.BackgroundImageSource = ImageSource.FromFile("back.png");
             member = cDic.member;
             if (member.DistrictId < 13)
             {
@@ -106,6 +105,11 @@ namespace LeSheApp.Views
             if (list.Count>0)
             {
                 listAddress.Children.Clear();
+                Label laC = new Label();
+                laC.Text = "總共" + list.Count + "筆";
+                laC.TextColor = Color.BlueViolet;
+                laC.FontSize = 18;
+                listAddress.Children.Add(laC);
                 Error.Text = "";
                 int count = 0;
                 foreach (var item in list)
@@ -126,9 +130,12 @@ namespace LeSheApp.Views
                     la.GestureRecognizers.Add(tapGestureRecognizer);
                     #endregion
                     laCount.FontSize = 18;
+                    //laCount.BackgroundColor = Color.White;
                     laCount.TextColor = Color.BlueViolet;
                     la.FontSize = 20;
+                    la.BackgroundColor = Color.White;
                     la2.FontSize = 15;
+                    //la2.BackgroundColor = Color.White;
                     laCount.Text = "第" + count + "筆";
                     la.Text = "地點:" + item.Address;
                     la2.Text += "抵達時間: " + item.ArrivalTime.Hours + ":" + item.ArrivalTime.Minutes;

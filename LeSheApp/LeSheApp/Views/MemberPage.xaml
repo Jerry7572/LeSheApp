@@ -6,9 +6,9 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="姓名 :" TextColor="Red" FontSize="Large" 
+                <Label Text="姓名 :" TextColor="#000000" FontSize="Large" VerticalTextAlignment="Center"
                 ></Label>
-                <Label x:Name="labName" TextColor="Blue" FontSize="Large"
+                <Label x:Name="labName" TextColor="#272727" FontSize="Medium" VerticalTextAlignment="Center"
                 ></Label>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
@@ -36,13 +36,11 @@
                 ></Label>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="你想去哪裡? :" TextColor="Red" FontSize="Large" 
-                ></Label>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Button Text="查詢垃圾地圖" BackgroundColor="#89B130" FontSize="Medium" Clicked="toSearch"
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <Button Text="查詢垃圾地圖" HorizontalOptions="CenterAndExpand" BackgroundColor="#89B130" FontSize="Medium" Clicked="toSearch"
                 ></Button>
-                <Button Text="查詢附近團購" BackgroundColor="#89B130" FontSize="Medium" Clicked="toBuy"
+                <Button Text="查詢附近團購" HorizontalOptions="CenterAndExpand" BackgroundColor="#89B130" FontSize="Medium" Clicked="toBuy"
                 ></Button>
 
             </StackLayout>

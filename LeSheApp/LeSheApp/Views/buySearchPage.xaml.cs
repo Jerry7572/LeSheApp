@@ -18,7 +18,6 @@ namespace LeSheApp.Views
         public buySearchPage()
         {
             InitializeComponent();
-            this.BackgroundImageSource = ImageSource.FromFile("back.png");
             member = cDic.member;
             if (member.DistrictId < 13)
             {
@@ -59,6 +58,9 @@ namespace LeSheApp.Views
             if (list.Count>0)
             {
                 listBuy.Children.Clear();
+                Label laC = new Label();
+                laC.Text = "總共" + list.Count + "筆";
+                listBuy.Children.Add(laC);
                 Error.Text = "";
                 int count = 0;
                 foreach (var item in list)
