@@ -31,7 +31,7 @@
                 </StackLayout>
                 <StackLayout>
                     <Entry Placeholder="地址" x:Name="Address"></Entry>
-                    <Button Text="送出" Clicked="sendAddress"></Button>
+                    <Button BackgroundColor="#89B130" Text="送出" Clicked="sendAddress"></Button>
                 </StackLayout>
                 <StackLayout x:Name="listAddress">
                 </StackLayout>

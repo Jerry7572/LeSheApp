@@ -60,8 +60,10 @@ namespace LeSheApp.Views
                 listBuy.Children.Clear();
                 Label laC = new Label();
                 laC.Text = "總共" + list.Count + "筆";
-                listBuy.Children.Add(laC);
+                laC.TextColor = Color.BlueViolet;
+                laC.FontSize = 18;
                 Error.Text = "";
+                listBuy.Children.Add(laC);
                 int count = 0;
                 foreach (var item in list)
                 {

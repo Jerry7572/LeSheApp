@@ -33,6 +33,7 @@ namespace LeSheApp.Views
             }
             Address.Text = member.Address;
             length.SelectedIndex = 0;
+            this.BackgroundImageSource = ImageSource.FromFile("trash.jpg");
 
         }
 

@@ -5,45 +5,103 @@
              Title="會員資料">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal">
+            <StackLayout>
+                
+            <!--<StackLayout Orientation="Horizontal">
                 <Label Text="姓名 :" TextColor="#000000" FontSize="Large" VerticalTextAlignment="Center"
                 ></Label>
                 <Label x:Name="labName" TextColor="#3C3C3C" FontSize="Medium" VerticalTextAlignment="Center"
                 ></Label>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
+            </StackLayout>-->
+            <!--<StackLayout Orientation="Horizontal">
                 <Label Text="出生日期 :" TextColor="#000000" FontSize="Large" VerticalTextAlignment="Center"
                 ></Label>
                 <Label x:Name="labBirth" TextColor="#3C3C3C" FontSize="Medium" VerticalTextAlignment="Center"
                 ></Label>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
+            </StackLayout>-->
+            <!--<StackLayout Orientation="Horizontal">
                 <Label Text="電子信箱 :" TextColor="#000000" FontSize="Large" VerticalTextAlignment="Center"
                 ></Label>
                 <Label x:Name="labEmail" TextColor="#3C3C3C" FontSize="Medium" VerticalTextAlignment="Center"
                 ></Label>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
+            </StackLayout>-->
+            <!--<StackLayout Orientation="Horizontal">
                 <Label Text="地址 :" TextColor="#000000" FontSize="Large" VerticalTextAlignment="Center"
                 ></Label>
                 <Label x:Name="labAddress" TextColor="#3C3C3C" FontSize="Medium" VerticalTextAlignment="Center"
                 ></Label>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
+            </StackLayout>-->
+            <!--<StackLayout Orientation="Horizontal">
                 <Label Text="貢獻值 :" TextColor="#000000" FontSize="Large" VerticalTextAlignment="Center"
                 ></Label>
                 <Label x:Name="labBalance" TextColor="#3C3C3C" FontSize="Medium" VerticalTextAlignment="Center"
                 ></Label>
+            </StackLayout>-->
+            </StackLayout>
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="50*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="68*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Text="姓名" TextColor="#000000" FontSize="Large" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+                    <Label Grid.Row="0" Grid.Column="1" Text=":" TextColor="#000000" FontSize="Large" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+                    <Label Grid.Row="0" Grid.Column="2"  x:Name="labName" TextColor="#3C3C3C" FontSize="Medium" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+                    <Label Grid.Row="1" Grid.Column="0" Text="出生日期" TextColor="#000000" FontSize="Large" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+                    <Label Grid.Row="1" Grid.Column="1" Text=":" TextColor="#000000" FontSize="Large" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+                    <Label Grid.Row="1" Grid.Column="2" x:Name="labBirth" TextColor="#3C3C3C" FontSize="Medium" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+                    <Label Grid.Row="2" Grid.Column="0" Text="電子信箱" TextColor="#000000" FontSize="Large" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+                    <Label Grid.Row="2" Grid.Column="1" Text=":" TextColor="#000000" FontSize="Large" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+                    <Label Grid.Row="2" Grid.Column="2" x:Name="labEmail" TextColor="#3C3C3C" FontSize="Medium" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+                    <Label Grid.Row="3" Grid.Column="0" Text="地址" TextColor="#000000" FontSize="Large" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+                    <Label Grid.Row="3" Grid.Column="1" Text=":" TextColor="#000000" FontSize="Large" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+                    <Label Grid.Row="3" Grid.Column="2" x:Name="labAddress" TextColor="#3C3C3C" FontSize="Medium" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+                    <Label Grid.Row="4" Grid.Column="0" Text="貢獻值" TextColor="#000000" FontSize="Large" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+                    <Label Grid.Row="4" Grid.Column="1" Text=":" TextColor="#000000" FontSize="Large" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+                    <Label Grid.Row="4" Grid.Column="2" x:Name="labBalance" TextColor="#3C3C3C" FontSize="Medium" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                />
+
+                </Grid>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
-                <Button Text="查詢垃圾地圖" HorizontalOptions="StartAndExpand" BackgroundColor="#89B130" FontSize="15" Clicked="toSearch"
-                ></Button>
-                <Button Text="查詢附近團購" HorizontalOptions="CenterAndExpand" BackgroundColor="#89B130" FontSize="15" Clicked="toBuy"
-                ></Button>
-                <Button Text="查詢附近團購" HorizontalOptions="EndAndExpand" BackgroundColor="#89B130" FontSize="15" Clicked="toGar"
-                ></Button>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="33*" />
+                        <ColumnDefinition Width="34*" />
+                        <ColumnDefinition Width="33*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Text="查詢垃圾地圖" HorizontalOptions="Fill" BackgroundColor="#89B130" FontSize="15" Clicked="toSearch"
+                    />
+                    <Button Grid.Column="1" Text="查詢附近團購" HorizontalOptions="Fill" BackgroundColor="#89B130" FontSize="15" Clicked="toBuy"
+                    />
+                    <Button Grid.Column="2" Text="查詢附近團倒" HorizontalOptions="Fill" BackgroundColor="#89B130" FontSize="15" Clicked="toGar"
+                    />
+                </Grid>
             </StackLayout>
 
         </StackLayout>

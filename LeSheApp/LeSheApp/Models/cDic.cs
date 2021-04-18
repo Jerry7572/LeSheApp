@@ -38,8 +38,8 @@ namespace LeSheApp.Models
         }
         public string getJs(string con)
         {
-           // WebRequest request = WebRequest.Create($"http://192.168.36.103:80/Xamarin/{con}");
-              WebRequest request = WebRequest.Create($"https://192.168.36.187:81/Xamarin/{con}");
+            WebRequest request = WebRequest.Create($"https://192.168.36.103:443/Xamarin/{con}");
+            //WebRequest request = WebRequest.Create($"https://192.168.36.187:81/Xamarin/{con}");
             request.Credentials = CredentialCache.DefaultCredentials;
             ServicePointManager.ServerCertificateValidationCallback += (o, certificate, chain, errors) => true;
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();

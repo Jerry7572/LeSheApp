@@ -98,11 +98,17 @@ namespace LeSheApp.Views
             cDic cDic = new cDic();
             var json = cDic.cWeb(totalAddress, maxLength, 2);
             var back = JsonConvert.DeserializeObject(json);
-            if (!back.ToString().Contains("Fail"))
+            List<cGarbageoffer> list = JsonConvert.DeserializeObject<List<cGarbageoffer>>(json);
+            if (list.Count > 1)
             {
-                List<cGarbageoffer> list = JsonConvert.DeserializeObject<List<cGarbageoffer>>(json);
                 listGar.Children.Clear();
+                Label laC = new Label();
+                laC.Text = "總共" + list.Count + "筆";
+                laC.TextColor = Color.BlueViolet;
+                laC.FontSize = 18;
+                listGar.Children.Add(laC);
                 Error.Text = "";
+
                 int count = 0;
                 foreach (var item in list)
                 {

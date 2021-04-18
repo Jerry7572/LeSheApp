@@ -19,7 +19,7 @@ namespace LeSheApp.Views
     {
         public LoginPage()
         {
-            this.BackgroundImageSource = ImageSource.FromFile("back.png");
+            this.BackgroundImageSource = ImageSource.FromFile("trash.jpg");
             var vm = new LoginViewModel();
             this.BindingContext = vm;
             vm.DisplayFail += () => DisplayAlert("Error", "Invalid Login, try again", "OK");
