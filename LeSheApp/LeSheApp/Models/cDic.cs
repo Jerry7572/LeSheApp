@@ -11,8 +11,21 @@ namespace LeSheApp.Models
     public class cDic
     {
         static public cMember member;
+        IPHostEntry iphostentry = Dns.GetHostEntry(Dns.GetHostName());
+        string memIP = "";
         public string cWeb(string email , string password)
         {
+            string strHostName = Dns.GetHostName();
+            IPHostEntry iphostentry = Dns.GetHostEntry(strHostName);
+            //string ipaddress = iphostentry.AddressList[1].ToString() ;
+            foreach (IPAddress ipaddress in iphostentry.AddressList)
+            {
+                // 只取得IP V4的Address
+                if (ipaddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    memIP = ipaddress.ToString();
+                }
+            }
             string con = $"Login?email={ email}&password={ password}";
             string json = getJs(con);
             return json;
@@ -25,9 +38,10 @@ namespace LeSheApp.Models
         }
         public string getJs(string con)
         {
-          //  WebRequest request = WebRequest.Create($"http://192.168.36.103:80/Xamarin/{con}");
-            WebRequest request = WebRequest.Create($"http://192.168.36.187:81/Xamarin/{con}");
+           // WebRequest request = WebRequest.Create($"http://192.168.36.103:80/Xamarin/{con}");
+              WebRequest request = WebRequest.Create($"https://192.168.36.187:81/Xamarin/{con}");
             request.Credentials = CredentialCache.DefaultCredentials;
+            ServicePointManager.ServerCertificateValidationCallback += (o, certificate, chain, errors) => true;
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Console.WriteLine(response.StatusDescription);
             Stream dataStream = response.GetResponseStream();

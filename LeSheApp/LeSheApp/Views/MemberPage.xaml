@@ -42,7 +42,7 @@
                 ></Button>
                 <Button Text="查詢附近團購" HorizontalOptions="CenterAndExpand" BackgroundColor="#89B130" FontSize="15" Clicked="toBuy"
                 ></Button>
-                <Button Text="查詢附近團購" HorizontalOptions="EndAndExpand" BackgroundColor="#89B130" FontSize="15" Clicked="toBuy"
+                <Button Text="查詢附近團購" HorizontalOptions="EndAndExpand" BackgroundColor="#89B130" FontSize="15" Clicked="toGar"
                 ></Button>
             </StackLayout>
 

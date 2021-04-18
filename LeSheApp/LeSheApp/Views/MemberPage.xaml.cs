@@ -36,5 +36,10 @@ namespace LeSheApp.Views
         {
             Navigation.PushAsync(new buySearchPage());
         }
+
+        private void toGar(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new garGroupPage());
+        }
     }
 }

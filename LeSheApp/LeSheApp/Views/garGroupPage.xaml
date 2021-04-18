@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LeSheApp.Views.garGroupPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Picker Title="請選擇" SelectedIndexChanged="selectedCity" x:Name="City">
+                            <Picker.Items>
+                                <x:String>台北市</x:String>
+                                <x:String>新北市</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Picker Title="請選擇" x:Name="Dis">
+                        </Picker>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Picker Title="請選擇" x:Name="length">
+                            <Picker.Items>
+                                <x:String>500公尺</x:String>
+                                <x:String>1000公尺</x:String>
+                                <x:String>1500公尺</x:String>
+                                <x:String>2000公尺</x:String>
+                                <x:String>2500公尺</x:String>
+                                <x:String>3000公尺</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <Entry Placeholder="地址" x:Name="Address"></Entry>
+                    <Button Text="送出" Clicked="sendBuy"></Button>
+                </StackLayout>
+                <StackLayout x:Name="listGar">
+                </StackLayout>
+
+                <Label x:Name="Error" TextColor="Red"></Label>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
