@@ -31,6 +31,66 @@ namespace LeSheApp.Views
             }
             Address.Text = member.Address;
             length.SelectedIndex = 0;
+            this.BackgroundImageSource = ImageSource.FromFile("trash.jpg");
+        }
+        private void sendBuy(object sender, EventArgs e)
+        {
+            if (City.SelectedIndex < 0 || Dis.SelectedIndex < 0 || length.SelectedIndex < 0)
+            {
+                Error.Text = "請選擇";
+                return;
+            }
+            string totalAddress = City.SelectedItem.ToString() + Dis.SelectedItem.ToString() + Address.Text;
+            int maxLength = Convert.ToInt32(length.SelectedItem.ToString().Substring(0, 3));
+            cDic cDic = new cDic();
+            var json = cDic.cWeb(totalAddress, maxLength, 2);
+            var back = JsonConvert.DeserializeObject(json);
+            List<cGarbageoffer> list = JsonConvert.DeserializeObject<List<cGarbageoffer>>(json);
+            if (list.Count > 1)
+            {
+                this.BackgroundImageSource = "";
+                listGar.Children.Clear();
+                Label laC = new Label();
+                laC.Text = "總共" + list.Count + "筆";
+                laC.TextColor = Color.BlueViolet;
+                laC.FontSize = 18;
+                listGar.Children.Add(laC);
+                Error.Text = "";
+
+                int count = 0;
+                foreach (var item in list)
+                {
+                    count++;
+                    Label laCount = new Label();
+                    Label la = new Label();
+                    Label la2 = new Label();
+                    #region hyperlink
+                    Label hyper = new Label();
+                    string link = "http://maps.google.com/?q=" + item.Address;
+                    var tapGestureRecognizer = new TapGestureRecognizer();
+                    tapGestureRecognizer.Tapped += async (s, even) => {
+                        // Depreciated - Device.OpenUri( new Uri((Label)s).Text); 
+                        // await Launcher.OpenAsync(new Uri(((Label)s).Text));
+                        await Launcher.OpenAsync(new Uri(link));
+                    };
+                    la.GestureRecognizers.Add(tapGestureRecognizer);
+                    #endregion
+                    laCount.FontSize = 18;
+                    laCount.TextColor = Color.BlueViolet;
+                    la.FontSize = 20;
+                    la2.FontSize = 15;
+                    laCount.Text = "第" + count + "筆";
+                    la.Text = "地點:" + item.Address;
+                    // la2.Text += "抵達時間: " + item.ArrivalTime.Hours + ":" + item.ArrivalTime.Minutes;
+                    listGar.Children.Add(laCount);
+                    listGar.Children.Add(la);
+                    listGar.Children.Add(la2);
+                }
+            }
+            else
+                Error.Text = "查無結果";
+
+
         }
         private void selectedCity(object sender, EventArgs e)
         {
@@ -82,65 +142,6 @@ namespace LeSheApp.Views
                 Dis.Items.Add("萬里區");
                 Dis.Items.Add("烏來區");
             }
-
-
-        }
-
-        private void sendBuy(object sender, EventArgs e)
-        {
-            if (City.SelectedIndex < 0 || Dis.SelectedIndex < 0 || length.SelectedIndex < 0)
-            {
-                Error.Text = "請選擇";
-                return;
-            }
-            string totalAddress = City.SelectedItem.ToString() + Dis.SelectedItem.ToString() + Address.Text;
-            int maxLength = Convert.ToInt32(length.SelectedItem.ToString().Substring(0, 3));
-            cDic cDic = new cDic();
-            var json = cDic.cWeb(totalAddress, maxLength, 2);
-            var back = JsonConvert.DeserializeObject(json);
-            List<cGarbageoffer> list = JsonConvert.DeserializeObject<List<cGarbageoffer>>(json);
-            if (list.Count > 1)
-            {
-                listGar.Children.Clear();
-                Label laC = new Label();
-                laC.Text = "總共" + list.Count + "筆";
-                laC.TextColor = Color.BlueViolet;
-                laC.FontSize = 18;
-                listGar.Children.Add(laC);
-                Error.Text = "";
-
-                int count = 0;
-                foreach (var item in list)
-                {
-                    count++;
-                    Label laCount = new Label();
-                    Label la = new Label();
-                    Label la2 = new Label();
-                    #region hyperlink
-                    Label hyper = new Label();
-                    string link = "http://maps.google.com/?q=" + item.Address;
-                    var tapGestureRecognizer = new TapGestureRecognizer();
-                    tapGestureRecognizer.Tapped += async (s, even) => {
-                        // Depreciated - Device.OpenUri( new Uri((Label)s).Text); 
-                        // await Launcher.OpenAsync(new Uri(((Label)s).Text));
-                        await Launcher.OpenAsync(new Uri(link));
-                    };
-                    la.GestureRecognizers.Add(tapGestureRecognizer);
-                    #endregion
-                    laCount.FontSize = 18;
-                    laCount.TextColor = Color.BlueViolet;
-                    la.FontSize = 20;
-                    la2.FontSize = 15;
-                    laCount.Text = "第" + count + "筆";
-                    la.Text = "地點:" + item.Address;
-                    // la2.Text += "抵達時間: " + item.ArrivalTime.Hours + ":" + item.ArrivalTime.Minutes;
-                    listGar.Children.Add(laCount);
-                    listGar.Children.Add(la);
-                    listGar.Children.Add(la2);
-                }
-            }
-            else
-                Error.Text = "查無結果";
 
 
         }

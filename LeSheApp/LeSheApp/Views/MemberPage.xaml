@@ -88,20 +88,21 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal">
             </StackLayout>
-            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+            <StackLayout VerticalOptions="EndAndExpand">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="33*" />
                         <ColumnDefinition Width="34*" />
                         <ColumnDefinition Width="33*" />
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Text="查詢垃圾地圖" HorizontalOptions="Fill" BackgroundColor="#89B130" FontSize="15" Clicked="toSearch"
+                    <Button Grid.Column="0" Text="查詢垃圾地圖" HorizontalOptions="FillAndExpand" BackgroundColor="#89B130" FontSize="15" Clicked="toSearch"
                     />
-                    <Button Grid.Column="1" Text="查詢附近團購" HorizontalOptions="Fill" BackgroundColor="#89B130" FontSize="15" Clicked="toBuy"
+                    <Button Grid.Column="1" Text="查詢附近團購" HorizontalOptions="FillAndExpand" BackgroundColor="#89B130" FontSize="15" Clicked="toBuy"
                     />
-                    <Button Grid.Column="2" Text="查詢附近團倒" HorizontalOptions="Fill" BackgroundColor="#89B130" FontSize="15" Clicked="toGar"
+                    <Button Grid.Column="2" Text="查詢附近團倒" HorizontalOptions="FillAndExpand" BackgroundColor="#89B130" FontSize="15" Clicked="toGar"
                     />
                 </Grid>
+
             </StackLayout>
 
         </StackLayout>

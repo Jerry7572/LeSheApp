@@ -105,6 +105,7 @@ namespace LeSheApp.Views
             List<cSpot> list = JsonConvert.DeserializeObject<List<cSpot>>(json);
             if (list.Count>0)
             {
+                this.BackgroundImageSource = "";
                 listAddress.Children.Clear();
                 Label laC = new Label();
                 laC.Text = "總共" + list.Count + "筆";

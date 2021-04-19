@@ -31,6 +31,7 @@ namespace LeSheApp.Views
             }
             Address.Text = member.Address;
             length.SelectedIndex = 0;
+            this.BackgroundImageSource = ImageSource.FromFile("trash.jpg");
 
         }
 
@@ -57,6 +58,7 @@ namespace LeSheApp.Views
             List<cOrder> list = JsonConvert.DeserializeObject<List<cOrder>>(json);
             if (list.Count>0)
             {
+                this.BackgroundImageSource = "";
                 listBuy.Children.Clear();
                 Label laC = new Label();
                 laC.Text = "總共" + list.Count + "筆";
